@@ -1,0 +1,29 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.class
+
+# Spring Boot
+*.jar
+*.war
+*.nar
+target/
+
+# Environment — never commit secrets
+.env
+*.env.local
+
+# macOS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
