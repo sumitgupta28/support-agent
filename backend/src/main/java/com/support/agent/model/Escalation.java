@@ -14,7 +14,7 @@ public class Escalation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "session_id", nullable = false)
     private String sessionId;
