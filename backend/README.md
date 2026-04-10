@@ -185,3 +185,16 @@ Response:
   "escalated": false
 }
 ```
+
+
+```bash
+
+curl http://localhost:11434/v1/messages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "glm-5:cloud",
+    "max_tokens": 1024,
+    "messages": [{"role": "user", "content": "Hello!"}]
+  }'
+
+```

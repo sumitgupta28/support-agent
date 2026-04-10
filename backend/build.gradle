@@ -55,6 +55,6 @@ tasks.named('test') {
 }
 
 // Allow running: ./gradlew bootRun
-bootRun {
+/*bootRun {
     environment 'ANTHROPIC_API_KEY', System.getenv('ANTHROPIC_API_KEY') ?: ''
-}
+}*/

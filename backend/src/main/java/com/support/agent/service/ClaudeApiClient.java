@@ -25,9 +25,9 @@ public class ClaudeApiClient {
 
     @Value("${anthropic.max-tokens}")
     private int maxTokens;
+    @Value("${anthropic.api-url}")
+    private String API_URL;
 
-    private static final String API_URL =
-            "https://api.anthropic.com/v1/messages";
     private static final MediaType JSON =
             MediaType.get("application/json");
 

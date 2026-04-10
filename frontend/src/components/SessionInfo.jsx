@@ -29,7 +29,7 @@ export default function SessionInfo({ sessionId, escalated }) {
 
       <div style={styles.row}>
         <span style={styles.key}>Model</span>
-        <code style={styles.value}>claude-sonnet-4-6</code>
+        <code style={styles.value}>glm-5:cloud</code>
       </div>
     </div>
   )
