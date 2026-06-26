@@ -40,22 +40,29 @@ Targets ≥ 80% first-contact resolution with a clean human escalation path.
 
 ## Quick start (macOS)
 
-### Step 1 — First-time setup (run once)
+### Step 1 — Run Ollama locally 
+
+#### should have prior setup for ollama
 
 ```bash
-chmod +x setup.sh start.sh
-./setup.sh
+ollama launch claude --model glm-5:cloud
 ```
 
-This installs Java 21, Node, PostgreSQL 16, creates the database user,
-saves your API key to `~/.zshrc`, and installs npm packages.
 
-### Step 2 — Start everything
+### Step 2 — Start Database
 
 ```bash
-source ~/.zshrc      # pick up API key + PATH changes
-./start.sh
+docker-compose up
 ```
+
+
+### Step 3 — Start backend 
+
+```bash
+cd backend
+
+```
+
 
 Open **http://localhost:3000**
 

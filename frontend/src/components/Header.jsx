@@ -6,7 +6,7 @@ export default function Header({ sessionId, onReset, backendOk }) {
           <span style={styles.logoIcon}>◈</span>
           <span style={styles.logoText}>Support Agent</span>
         </div>
-        <span style={styles.model}>claude-sonnet-4-6</span>
+        <span style={styles.model}>glm-5:cloud</span>
       </div>
 
       <div style={styles.right}>
