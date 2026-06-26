@@ -1,0 +1,24 @@
+# Root-level ignores shared across the repo.
+# Module-specific build artifacts are handled in backend/.gitignore and frontend/.gitignore.
+
+# macOS / OS files
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# IDE / editor
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# Environment — never commit secrets (ANTHROPIC_API_KEY lives in the shell / ~/.zshrc)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
