@@ -29,6 +29,11 @@ is ambiguous or out of policy.
 - `./start.sh` — starts PostgreSQL, backend, and frontend together; requires `ANTHROPIC_API_KEY` already exported.
 - `docker-compose up -d` — alternative: run just PostgreSQL 16 in a container (same `supportdb`/`support_user`/`support_pass` credentials).
 
+### Monitoring (run from `monitoring/`)
+- `docker-compose up -d` — start Prometheus (:9090) + Grafana (:3001) as a standalone stack.
+- The backend exposes Micrometer metrics at `http://localhost:8080/actuator/prometheus` (via `spring-boot-starter-actuator` + `micrometer-registry-prometheus`). Prometheus scrapes the host-run backend through `host.docker.internal:8080`, so the backend must be running (`./gradlew bootRun`) for the target to be **UP** (see `http://localhost:9090/targets`).
+- Grafana login `admin/admin`; the Prometheus datasource and the "Spring Boot / JVM (Micrometer)" dashboard are auto-provisioned from `monitoring/grafana/provisioning/` — no manual import. The dashboard JSON is committed (`monitoring/grafana/dashboards/`) so it loads offline.
+
 ## Architecture
 
 Request flow: **React → `AgentController` (`/api/agent/chat`) → `AgentOrchestrator` → Anthropic API + MCP tools → PostgreSQL**, response carries `{ reply, toolTrace, escalated }`.

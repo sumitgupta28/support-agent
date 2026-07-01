@@ -8,7 +8,9 @@
 Thumbs.db
 
 # IDE / editor
+.idea
 .idea/
+.idea/*.xml
 *.iml
 .vscode/
 *.swp

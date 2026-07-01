@@ -37,6 +37,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 
+    // Metrics: Actuator exposes /actuator/prometheus, Micrometer renders Prometheus format
+    // (versions managed by the Spring Boot 3.3.5 dependency BOM — do not pin)
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'io.micrometer:micrometer-registry-prometheus'
+
     // PostgreSQL driver
     runtimeOnly 'org.postgresql:postgresql'
 
