@@ -1,6 +1,8 @@
 ---
 name: pr-description
 description: Draft a GitHub pull-request description for the support-agent repo from the current branch's diff vs main, in chat only (copy-paste markdown, no gh writes). Use when the user asks to "pr-description", "write a PR description", "draft a PR description", or "generate a PR body". For reviewing an existing PR use /pr-review instead.
+# Structured summarization from a diff — a mid-tier model handles this well.
+model: claude-sonnet-4-6
 ---
 
 # PR Description (support-agent)

@@ -1,6 +1,27 @@
 ---
 name: pr-review
 description: Review a GitHub pull request for the support-agent repo against this project's specific conventions (two-layer rule enforcement, Flyway-only schema, pinned test deps, strict frontend lint). Use when the user asks to "pr-review", "review PR #N", "review this pull request", or gives a github.com PR URL. For reviewing local uncommitted changes use /code-review instead.
+argument-hint: "[pr-number-or-url]"
+# Security-sensitive review of a refund-issuing agent — use the strongest model
+# and run it hard; review quality scales with reasoning depth.
+model: claude-opus-4-8
+effort: high
+# Pre-approve only the read-only gh/git commands this skill runs, so review
+# proceeds without per-call permission prompts. Does NOT restrict the tool pool.
+allowed-tools:
+  - Read
+  - Grep
+  - Bash(gh pr view:*)
+  - Bash(gh pr diff:*)
+  - Bash(gh pr list:*)
+  - Bash(gh auth status:*)
+# This skill produces a chat-only report — it must never mutate files or write to
+# GitHub. Remove write/edit tools from the pool while it is active.
+disallowed-tools:
+  - Edit
+  - Write
+  - NotebookEdit
+  
 ---
 
 # PR Review (support-agent)
